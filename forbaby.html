@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love</title>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("AdA_rLiubk_9VsNky"); // Replace with your EmailJS User ID
+        })();
+
+       function sendEmail() {
+    // Send email to you (Notification)
+    emailjs.send("service_zqk3hbm", "template_ewawwch", {
+        to_name: "Sunny",
+        message: "She clicked the box! ❤️",
+        to_email: "minhquansis2008@gmail.com"
+    }).then(function(response) {
+        console.log("SUCCESS! Notification sent to you.", response.status, response.text);
+        
+        // Send email to her (Thank You) only if first email is successful
+        emailjs.send("service_zqk3hbm", "template_8eudgx3", {
+            to_name: "Xuyen",
+            to_email: "thisnutisbig@gmail.com"
+        }).then(function(response) {
+            console.log("SUCCESS! Thank-you email sent to her.", response.status, response.text);
+        }).catch(function(error) {
+            console.log("FAILED to send thank-you email...", error);
+        });
+
+    }).catch(function(error) {
+        console.log("FAILED to send notification...", error);
+    });
+
+    alert("I LOVE YOU SO MUCH BABY I WILL ALWAYS MAKE YOU HAPPY ❤️");
+}
+
+    </script>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; background-color: #ffe6e6; padding: 20px; }
+        h1 { color: red; font-size: 2.5em; }
+        .message { width: 90%; max-width: 600px; min-height: 150px; padding: 20px; border: 2px dashed gray; background-color: white; margin: 20px auto; font-size: 1.2em; line-height: 1.5; }
+        img { width: 90%; max-width: 400px; height: auto; border-radius: 10px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); }
+        .checkbox-container { margin-top: 20px; font-size: 1.2em; }
+    </style>
+</head>
+<body>
+    <h1>To my beloved princess ❤️</h1>
+    
+    <div class="message">
+        <p>Hello baby, I want to tell you again, I know that I have made alot of mistakes baby and many of them are really bad. But I want to tell you that I'm really sorry and I have learnt my lessons babe. Starting from the wound on your leg, due to me being so uncareful you had to go through that, I am so sorry my love that will never happen again I swear to you. The second is that sometimes I get really lazy and do not participate in things you want me to do but I change, I will not be like that anymore I promise you that. And I am going to be real with you baby, I feel so much happiness when I play games with you and talk like I did recently, I missed that feeling so much now I know why, from now on I will always turn on my cam and have that positive energy because I love it too baby. We are also 6 weeks away from being in Australia together and I hope we thrive there, I will certainly work hard to get my citizenship and help you get yours too because everything is possible, we have all the resources as well as all of the necessary connections to be granted it easily, we basically have a huge headstart, I just have to work hard and I will. Again baby I love you so much and I feel like no matter what, you still are the most compatible to me because I love being around you and I love talking to you, I adore your energy too baby. I love you so much!!! I hope you forgive me baby. I also have a gift for you at home that I got you as a New Years gift! I left you a box below and if you click it, it means you agree to forgive me and believe me that I will change for you baby because I love you, trust meee!!
+
+ <span style="color: limegreen; font-weight: bold;">P/S:</span> 
+    Only tick the box under after you have read every single word above and AGREE TO FORGIVE MEE okay? You promise me babe :) <3
+</p>
+    </div>
+
+    <img src="https://i.postimg.cc/g0j62swf/IMG-0616.jpg">
+
+    <div class="checkbox-container">
+    <label>
+        <span style="font-size: 2em; font-weight: bold; color: red; margin-right: 10px;">&#8594;</span>
+        <input type="checkbox" onclick="sendEmail()"> 
+        <span style="color: red; font-weight: bold;">ONLY CLICK AFTER YOU HAVE READ THE P/S ABOVE!!!</span>
+    </label>
+</div>
+</body>
+</html>
